@@ -63,12 +63,12 @@ $resultats[] = verdict( 'WF-15 — la publication est journalisée', $n > 0, "{$
 $technifloc = get_page_by_title( 'TECHNIFLOC-DIFFUSION', OBJECT, NG_Participations::CPT );
 $avant = get_post_meta( $technifloc->ID, '_ng_journal_statut', true );
 $avant = is_array( $avant ) ? count( $avant ) : 0;
-$_POST = array(
-	NG_Participations::NONCE => wp_create_nonce( NG_Participations::NONCE ),
-	'ng_statut'              => 'detenue',
-	'ng_secteur'             => 'Ennoblissement textile',
-	'ng_actif'               => '1',
-);
+/* On repart des valeurs existantes : un vrai formulaire les renvoie toutes. */
+$_POST = array( NG_Participations::NONCE => wp_create_nonce( NG_Participations::NONCE ) );
+foreach ( array_keys( NG_Participations::champs() ) as $cle ) {
+	$_POST[ 'ng_' . $cle ] = get_post_meta( $technifloc->ID, '_ng_' . $cle, true );
+}
+$_POST['ng_statut'] = 'detenue';
 NG_Participations::sauvegarder( $technifloc->ID, get_post( $technifloc->ID ) );
 $apres = get_post_meta( $technifloc->ID, '_ng_journal_statut', true );
 $apres = is_array( $apres ) ? count( $apres ) : 0;

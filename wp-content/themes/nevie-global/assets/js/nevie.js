@@ -28,7 +28,7 @@
 	}
 
 	/* --- Bannière cookies -------------------------------------------------- */
-	var banniere = document.getElementById('cookies');
+	var banniere = document.getElementById('banniere-cookies');
 	if (!banniere) {
 		return;
 	}

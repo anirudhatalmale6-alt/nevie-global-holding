@@ -295,3 +295,50 @@ a.ligne:hover{background:rgba(200,150,30,.07);padding-inline:.9rem}
   .entete,.cookies,.bandeau,.btn{display:none!important}
   body{background:#fff;color:#000;font-size:11pt}
 }
+
+/* --- Page 3 : les 7 étapes du modèle --------------------------------------- */
+.etapes{display:grid;gap:0;border-top:1px solid var(--gris-clair)}
+.etape{display:grid;grid-template-columns:minmax(0,.22fr) minmax(0,.78fr);gap:clamp(1.2rem,4vw,3.2rem);
+  padding:2.2rem .2rem;border-bottom:1px solid var(--gris-clair);align-items:start}
+.etape__num{font-size:2.1rem;font-weight:300;color:var(--or-fonce);line-height:1;letter-spacing:-.03em}
+.etape__titre{font-size:1.32rem;font-weight:500;letter-spacing:-.01em;margin-bottom:.55rem}
+.etape__texte{color:var(--gris);font-weight:300;max-width:64ch;margin:0}
+/* Liste d'étapes sans description : plus resserrée. */
+.etapes--compact .etape{padding:1.15rem .2rem;align-items:center}
+.etapes--compact .etape__num{font-size:1.5rem}
+@media (max-width:760px){
+  .etape{grid-template-columns:1fr;gap:.7rem;padding:1.8rem .2rem}
+  .etape__num{font-size:1.4rem}
+  .etapes--compact .etape{padding:1rem .2rem}
+}
+
+/* --- Formulaires (Partie 6) ------------------------------------------------ */
+.formulaire{margin-top:2.2rem;max-width:900px}
+.formulaire__grille{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1.3rem 1.6rem}
+.champ{margin:0;display:flex;flex-direction:column;gap:.45rem}
+.champ--large{grid-column:1/-1}
+.champ label{font-size:.82rem;font-weight:500;letter-spacing:.02em}
+.champ label span{color:#B4321F}
+.champ input[type=text],.champ input[type=email],.champ input[type=tel],
+.champ select,.champ textarea{
+  font:inherit;font-size:.95rem;font-weight:300;padding:.75rem .9rem;
+  border:1px solid var(--gris-clair);background:#fff;color:var(--encre);border-radius:0
+}
+.champ input:focus-visible,.champ select:focus-visible,.champ textarea:focus-visible{border-color:var(--bleu)}
+.champ input[type=file]{font-size:.88rem}
+.champ__aide{font-size:.8rem;color:var(--gris);font-weight:300}
+.champ--case{flex-direction:row;margin-top:1.1rem}
+.champ--case label{display:flex;gap:.7rem;align-items:flex-start;font-weight:300;font-size:.92rem;line-height:1.5}
+.champ--case input{margin-top:.25rem;flex:none;width:1.05rem;height:1.05rem;accent-color:var(--bleu)}
+.formulaire button[disabled]{opacity:.45;cursor:not-allowed}
+@media (max-width:700px){.formulaire__grille{grid-template-columns:1fr}}
+
+/* --- Coordonnées (Page 8) et pages légales --------------------------------- */
+.coordonnees{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;margin-top:2.4rem}
+.legal dt{font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gris);margin-top:1.5rem}
+.legal dd{margin:.35rem 0 0;font-size:1.02rem;font-weight:300}
+.legal dt:first-child{margin-top:0}
+.tableau-duree{width:100%;border-collapse:collapse;margin-top:1.4rem;font-size:.92rem}
+.tableau-duree th{background:var(--noir);color:#fff;text-align:left;padding:.7rem .9rem;
+  font-weight:500;font-size:.78rem;letter-spacing:.05em}
+.tableau-duree td{padding:.7rem .9rem;border-bottom:1px solid var(--gris-clair);font-weight:300}

@@ -53,7 +53,7 @@
  * « Refuser » n'en charge aucun non plus. Le choix est mémorisé localement.
  */
 ?>
-<aside class="cookies" id="cookies" role="dialog" aria-labelledby="cookies-titre" aria-describedby="cookies-texte" hidden>
+<aside class="cookies" id="banniere-cookies" role="dialog" aria-labelledby="cookies-titre" aria-describedby="cookies-texte" hidden>
 	<div class="cookies__grille">
 		<div>
 			<p id="cookies-titre" class="pied__titre" style="color:var(--or-fonce)">Cookies</p>
